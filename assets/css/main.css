@@ -3911,10 +3911,11 @@ input, select, textarea {
 
 /* Targets images inside the 'What I do' features grid */
 #two .features section img {
-    width: 100% !important;    /* Forces full width regardless of inline styles */
-    height: 250px;             /* Set your desired uniform height */
+    width: 67% !important;    /* Forces full width regardless of inline styles */
+    height: 500px;             /* Set your desired uniform height */
     object-fit: cover;         /* Crops to fit without distortion */
     object-position: center;   /* Centers the crop */
     border-radius: 4px;
     margin-top: 10px;
 }
+
