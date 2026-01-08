@@ -2604,6 +2604,11 @@ input, select, textarea {
 				width: 100%;
 			}
 
+			.image.fit.fixed-height img {
+				height: 300px;
+				object-fit: cover;
+			}
+
 		.image.main {
 			display: block;
 			margin: 0 0 3em 0;
