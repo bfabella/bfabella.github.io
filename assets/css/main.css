@@ -2725,8 +2725,17 @@ input[type="radio"]+label:before {
 }
 
 .image.fit.fixed-height img {
-	height: 300px !important;
-	object-fit: cover !important;
+	width: 100% !important;
+	/* Forces full width regardless of inline styles */
+	height: 250px;
+	/* Set your desired uniform height */
+	object-fit: cover;
+	/* Crops to fit without distortion */
+	object-position: center;
+	/* Centers the crop */
+	border-radius: 4px;
+	margin-top: 10px;
+
 }
 
 .image.main {
