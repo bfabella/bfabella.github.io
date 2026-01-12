@@ -4060,3 +4060,56 @@ body.is-preload #sidebar nav ul li {
 	border-radius: 4px;
 	margin-top: 10px;
 }
+
+/* Zoom Modal */
+#zoom-modal {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.9);
+	z-index: 10000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.3s ease;
+}
+
+#zoom-modal.active {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+#zoom-modal img {
+	max-width: 90%;
+	max-height: 90%;
+	border: 2px solid white;
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#zoom-modal .close {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	font-size: 40px;
+	font-weight: bold;
+	color: #f1f1f1;
+	cursor: pointer;
+	transition: color 0.2s;
+}
+
+#zoom-modal .close:hover {
+	color: #bbb;
+}
+
+.zoom {
+	cursor: zoom-in;
+	transition: transform 0.2s;
+}
+
+.zoom:hover {
+	transform: scale(1.02);
+}
