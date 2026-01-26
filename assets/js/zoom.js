@@ -1,5 +1,5 @@
-(function($) {
-  $(document).ready(function() {
+(function ($) {
+  $(document).ready(function () {
     // Create modal element
     var $modal = $('<div id="zoom-modal"></div>');
     var $modalImg = $('<img>');
@@ -12,15 +12,22 @@
     $('body').append($modal);
 
     // Open modal on image click
-    $('.zoom').on('click', function() {
+    $('.zoom').on('click', function () {
       var videoSrc = $(this).attr('data-video');
-      
+      var imageSrc = $(this).attr('data-image');
+
       if (videoSrc) {
         $modalImg.hide();
         $modalVideo.attr('src', videoSrc).show();
         $modal.addClass('active');
         // Play video after modal is shown to ensure it works
         $modalVideo[0].play();
+      } else if (imageSrc) {
+        $modalVideo.hide();
+        $modalVideo[0].pause();
+        $modalVideo.attr('src', '');
+        $modalImg.attr('src', imageSrc).show();
+        $modal.addClass('active');
       } else {
         var src = $(this).attr('src');
         $modalVideo.hide();
@@ -32,7 +39,7 @@
     });
 
     // Close modal on click outside or close button
-    $modal.on('click', function(e) {
+    $modal.on('click', function (e) {
       if (e.target !== $modalImg[0] && e.target !== $modalVideo[0]) {
         $modal.removeClass('active');
         $modalImg.attr('src', '');
