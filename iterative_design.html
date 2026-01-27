@@ -14,6 +14,33 @@
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
+	<style>
+		.play-overlay {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: rgba(0, 0, 0, 0.5);
+			border-radius: 50%;
+			width: 60px;
+			height: 60px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			pointer-events: none;
+			transition: background-color 0.3s ease;
+		}
+
+		.image.fit:hover .play-overlay {
+			background-color: rgba(0, 0, 0, 0.7);
+		}
+
+		.play-overlay i {
+			color: white;
+			font-size: 24px;
+			margin-left: 4px;
+		}
+	</style>
 </head>
 
 <body class="is-preload">
@@ -41,9 +68,11 @@
 						<div class="col-4"><span class="image fit"><img class="zoom" src="images/chambers.jpg" alt=""
 									title="" /></span>
 						</div>
-						<div class="col-4"><span class="image fit"><img class="zoom"
+						<div class="col-4"><span class="image fit" style="position: relative;"><img class="zoom"
 									src="images/animation_thumbnail.jpg" data-video="images/assembly_animation.mp4"
-									alt="Assembly Animation" /></span></div>
+									alt="Assembly Animation" />
+								<div class="play-overlay"><i class="fas fa-play"></i></div>
+							</span></div>
 						<div class="col-4">
 							<span class="image fit"><img class="zoom" src="images/Hudspeth_HERO_Option_2.jpg"
 									alt="" /></span>

@@ -14,6 +14,33 @@
 	<noscript>
 		<link rel="stylesheet" href="assets/css/noscript.css" />
 	</noscript>
+	<style>
+		.play-overlay {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: rgba(0, 0, 0, 0.5);
+			border-radius: 50%;
+			width: 60px;
+			height: 60px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			pointer-events: none;
+			transition: background-color 0.3s ease;
+		}
+
+		.image.fit:hover .play-overlay {
+			background-color: rgba(0, 0, 0, 0.7);
+		}
+
+		.play-overlay i {
+			color: white;
+			font-size: 24px;
+			margin-left: 4px;
+		}
+	</style>
 </head>
 
 <body class="is-preload">
@@ -64,12 +91,6 @@
 				<!-- Image -->
 				<div class="box alt">
 					<div class="row gtr-uniform aln-center">
-						<div class="col-4"><span class="image fit"><img class="zoom" src="images/piano_thumb.jpg"
-									data-image="images/piano.gif" alt="Assembly Animation" /></span>
-							<p style="text-align: center; font-style: italic; margin-top: 0.5rem; font-size: 0.9rem;">
-								Click to show animation. Each bright spot corresponds to a neuromast being targeted with
-								a laser for optogenetic stimulation.</p>
-						</div>
 						<div class="col-4"><span class="image fit"><img class="zoom" src="images/combined_system.jpg"
 									alt="" title="" /></span>
 						</div>
@@ -82,18 +103,46 @@
 				</div>
 
 				<p>Next, I designed and built a targeted, optogenetic stimulation arm that enabled us to play the
-					individual
-					neuromasts of a zebrafish like the keys of a piano (as shown in the animation above and to the
-					left). We could then deliver complex combinations of neuromast stimulation while simultaneously
-					recording brain activity. Using our combined system (schematized above and shown above and to the
-					right), we studied <a href="https://doi.org/10.1016/j.isci.2025.114192" target="_blank">how neurons
+					individual neuromasts of a zebrafish like the keys of a piano (as shown in the animation below and
+					to the left). We could then deliver complex combinations of neuromast stimulation while
+					simultaneously recording brain activity. Using our combined system (shown above), we studied <a
+						href="https://doi.org/10.1016/j.isci.2025.114192" target="_blank">how neurons
 						encode sensory
-						stimuli</a>.
+						stimuli</a>. An example recording is shown below and to the right.
 				</p>
 
+				<!-- Image -->
+				<div class="box alt">
+					<div class="row gtr-uniform aln-center">
+
+						<div class="col-5"><span class="image fit" style="position: relative;"><img class="zoom"
+									src="images/piano_thumb.jpg" data-image="images/piano.gif"
+									alt="Assembly Animation" />
+								<div class="play-overlay"><i class="fas fa-play"></i></div>
+							</span>
+							<p style="text-align: center; font-style: italic; margin-top: 0.5rem; font-size: 0.9rem;">
+								Each bright spot shows when a neuromast is targeted by a laser.</p>
+						</div>
+
+						<div class="col-5"><span class="image fit" style="position: relative;"><img class="zoom"
+									src="images/brain_thumbnail.jpg" data-video="images/mmc2.mp4"
+									alt="Assembly Animation" />
+								<div class="play-overlay"><i class="fas fa-play"></i></div>
+							</span>
+							<p style="text-align: center; font-style: italic; margin-top: 0.5rem; font-size: 0.9rem;">
+								<a href="https://doi.org/10.1016/j.isci.2025.114192" target="_blank">Brain activity
+									recording in response to optogenetic stimulation.</a>
+						</div>
+
+					</div>
+				</div>
 			</div>
 
-		</section>
+
+
+	</div>
+
+	</section>
 
 	</div>
 
