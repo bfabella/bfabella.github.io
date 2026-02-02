@@ -4113,3 +4113,118 @@ body.is-preload #sidebar nav ul li {
 .zoom:hover {
 	transform: scale(1.02);
 }
+
+
+/* Timeline */
+
+.timeline {
+	position: relative;
+	margin: 2em 0;
+	padding: 2em 0;
+}
+
+.timeline::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 20px;
+	width: 2px;
+	background: rgba(255, 255, 255, 0.15);
+}
+
+.timeline-item {
+	position: relative;
+	margin-bottom: 3em;
+	padding-left: 60px;
+}
+
+.timeline-item:last-child {
+	margin-bottom: 0;
+}
+
+.timeline-marker {
+	position: absolute;
+	top: 0;
+	left: 11px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background: #312450;
+	border: 2px solid #b74e91;
+	/* Using the theme highlight color */
+	z-index: 1;
+}
+
+.timeline-content {
+	position: relative;
+	background: rgba(255, 255, 255, 0.05);
+	padding: 1.5em;
+	border-radius: 4px;
+	border: solid 1px rgba(255, 255, 255, 0.15);
+}
+
+.timeline-content h3 {
+	margin-top: 0;
+}
+
+.timeline-date {
+	display: block;
+	margin-bottom: 0.5em;
+	font-weight: bold;
+	color: #b74e91;
+}
+
+@media screen and (min-width: 981px) {
+	.timeline::before {
+		left: 50%;
+		margin-left: -1px;
+	}
+
+	.timeline-item {
+		padding-left: 0;
+		width: 50%;
+	}
+
+	.timeline-item:nth-child(odd) {
+		padding-right: 3em;
+		text-align: right;
+		clear: left;
+		float: left;
+	}
+
+	.timeline-item:nth-child(even) {
+		padding-left: 3em;
+		text-align: left;
+		clear: right;
+		float: right;
+		margin-top: 3em;
+		/* Stagger effect */
+	}
+
+	.timeline-marker {
+		left: 50%;
+		/* Center relative to the container, needs adjust for item */
+		/* This is tricky with the float approach. Let's adjust. */
+		/* Actually, if items are 50% width, the marker should be strictly distinct or inside. */
+	}
+
+	/* Reset marker for centered layout */
+	.timeline-item:nth-child(odd) .timeline-marker {
+		left: auto;
+		right: -10px;
+		/* Half of width (20px) */
+	}
+
+	.timeline-item:nth-child(even) .timeline-marker {
+		left: -10px;
+		/* Half of width */
+	}
+}
+
+/* Clearfix for the timeline container */
+.timeline::after {
+	content: "";
+	display: table;
+	clear: both;
+}
